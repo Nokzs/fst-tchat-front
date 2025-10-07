@@ -66,6 +66,7 @@
   },
   "resolutions": {
   "crypto-browserify": "3.12.0",
-  "taffydb": "2.7.3"
+  "taffydb": "2.7.3",
+  "markdown-js": "0.0.4"
 }
 }
