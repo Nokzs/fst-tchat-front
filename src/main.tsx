@@ -56,7 +56,8 @@ const routes = [
     ],
   },
 ]
-const router = createBrowserRouter(routes);
+
+const router = createBrowserRouter(routes,{basename: base});
 const container = document.getElementById("root")!;
 const root = createRoot(container);
 root.render(
