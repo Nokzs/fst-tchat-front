@@ -23,7 +23,6 @@ export default defineConfig({
       usePolling: true,
     },
   },
-  // ne pas toucher pour permettre le deploiement
   test: {
     environment: "jsdom",
     globals: true,
