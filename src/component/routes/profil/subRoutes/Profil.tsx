@@ -25,6 +25,8 @@ export function Profil() {
             ? user.urlPicture
             : "https://avatar.iran.liara.run/public/20"
         }
+        ref={pictureRef}
+        handleModif={handleModif}
         overlay={true}
         overlayPicture={penSvg}
         className="m-5 h-32 w-32"
