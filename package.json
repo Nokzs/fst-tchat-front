@@ -61,13 +61,7 @@
     "typescript-eslint": "^8.39.1",
     "vite": "^7.1.2",
     "vite-plugin-svgr": "^4.5.0",
-    "vitest": "^3.2.4",
-    "tsdoc": "^0.0.4"
     "vitest": "^3.2.4"
-  },
-  "resolutions": {
-  "crypto-browserify": "3.12.0",
-  "taffydb": "2.7.3",
-  "markdown-js": "0.0.4"
-}
+  }
+ 
 }
