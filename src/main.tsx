@@ -17,8 +17,12 @@ import { Compte } from "./component/routes/profil/subRoutes/Compte.js";
 celles en dessous de notauthmiddleware sont accessible uniquement si l'utilisateur n'est pas connecté */
 const base = import.meta.env.MODE === "production" ? "fst-tchat-front" : ""
 const routes = [
+  {
+    Component: NotConnectedLayout,
+    middleware: [notAuthMiddleware],
+    children: [
       {
-        path: `/`,
+        path: "/",
         Component: HomePage,
       },
       {
@@ -55,7 +59,7 @@ const routes = [
       },
     ],
   },
-]
+];
 
 const router = createBrowserRouter(routes,{basename: base});
 const container = document.getElementById("root")!;
