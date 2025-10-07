@@ -15,14 +15,17 @@ import { Profil } from "./component/routes/profil/subRoutes/Profil.js";
 import { Compte } from "./component/routes/profil/subRoutes/Compte.js";
 /* Objets concernant les routes utilisé par les application toutes les routes en dessous la route authmiddleware sont protégé alors
 celles en dessous de notauthmiddleware sont accessible uniquement si l'utilisateur n'est pas connecté */
-
+const base = import.meta.env.MODE === "production" ? "fst-tchat-front" : ""
 const routes = [
+  {
+    path:`/${base}`,
+    children:[
   {
     Component: NotConnectedLayout,
     middleware: [notAuthMiddleware],
     children: [
       {
-        path: "/",
+        path: `/`,
         Component: HomePage,
       },
       {
@@ -60,6 +63,8 @@ const routes = [
     ],
   },
 ];
+      }
+]
 const router = createBrowserRouter(routes);
 const container = document.getElementById("root")!;
 const root = createRoot(container);
