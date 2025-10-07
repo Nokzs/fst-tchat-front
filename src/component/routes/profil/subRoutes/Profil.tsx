@@ -54,7 +54,7 @@ export function Profil() {
                 pseudoRef.current?.value,
                 bioRef.current?.value,
                 langsRef.current?.selectedOptions[0].value,
-                pictureRef.current?.src,
+                pictureRef.current,
               )
             }
           >
