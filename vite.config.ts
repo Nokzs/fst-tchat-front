@@ -23,6 +23,8 @@ export default defineConfig({
       usePolling: true,
     },
   },
+  // ne pas toucher pour permettre le deploiement
+  base: "/fst-tchat-front/",
   test: {
     environment: "jsdom",
     globals: true,
