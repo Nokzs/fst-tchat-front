@@ -2,11 +2,85 @@
     "homePage": {
         "heroMessage": {
             "part1": "Discuter avec vos amis",
-            "part2": "Découvre de nouvelles personnes qui partagent vos passions"
+            "part2": "Découvre de nouvelles personnes qui partagent vos passions",
+            "learn": "En savoir plus"
         },
+        "signin": "Se connecter",
+        "signup": "S'inscrire",
         "translate": "N'ayez plus peur de la barrière de la langue, notre application la franchit pour vous"
     },
     "profile": {
         "config": "Configuration"
+    },
+    "tchat": {
+        "profile": "Profile",
+        "logout": "Logout",
+        "send": "Envoyer",
+        "pinMessage": "Epingler le message",
+        "loadingMessages": "Chargement des messages...",
+        "deleteMessage": "Supprimer le message",
+        "messageDeleted": "Message supprimé",
+        "tchatRoom": "Salle de discussion",
+        "navigationMenu": {
+            "title": "Serveurs",
+            "noServer": "Aucun serveur disponible. Veuillez ajouter un serveur pour commencer à discuter !"
+        },
+        "chatBot": {
+            "welcomeMessage": "salut 👋, voici les commandes que tu peux utiliser dans ce channel :\n\n• /question [ta question]\n  → Pose une question à propos d'une discussion de ce channel.\n    Exemple : /question Qui a validé la décision de la dernière réunion ?\n\n• /summarize [date]\n  → Obtiens un résumé de la conversation à partir de la date indiquée.\n    Tu peux utiliser une date au format ISO ou en langage naturel.\n    Exemple : /summarize 2025-11-01T15:30:00\n    Exemple en langage naturel : /summarize hier après-midi",
+            "input": {
+                "placeholder": "Écrire un message...",
+                "send": "Envoyer"
+            },
+            "link": {
+                "home": "Home",
+                "profile": "Profile",
+                "account": "security",
+                "theme": "theme"
+            },
+            "typing": "Le bot est en train d'écrire"
+        },
+        "tchatRoom": "Salle de discussion",
+        "typing": {
+            "one": "{{name}} est en train d'écrire…",
+            "two": "{{name1}} et {{name2}} sont en train d'écrire…",
+            "many": "{{name1}}, {{name2}} et {{count}} autres écrivent…"
+        }
+    },
+    "room": {
+        "loadingMessages": "Chargement des messages...",
+        "updateClose": "Mettre à jour / Fermer le serveur",
+        "update": "Mettre à jour le serveur",
+        "open": "Ouvrir le serveur",
+        "openToPublic": "Ouvert au public",
+        "openPublic": "Ouvrir au public",
+        "tags": "tags séparés par des virgules",
+        "tagsPlaceholder": "ex : play,chill,french",
+        "cancel": "annuler",
+        "close": "fermer",
+        "confirm": "confirmer"
+    },
+    "server": {
+        "leave": "Quitter le serveur",
+        "loading": "Chargement du serveur...",
+        "list": "Liste des serveurs",
+        "create": "Créer un serveur",
+        "join": "Rejoindre un serveur",
+        "nodescription": "Aucune description",
+        "noServer": "Aucun serveur disponible. Veuillez ajouter un serveur pour commencer à discuter !",
+        "member": "Membres",
+        "link": "Lien d’invitation du serveur",
+        "connection": "Connexion...",
+        "joinForm": "Rejoindre",
+        "name": "Nom du serveur",
+        "description": "Description du serveur (optionnel)",
+        "find": "Chercher un serveur"
+    },
+    "profil": {
+        "link": {
+            "home": "Accueil",
+            "profile": "Profil",
+            "account": "Securité",
+            "theme": "Thème"
+        }
     }
 }

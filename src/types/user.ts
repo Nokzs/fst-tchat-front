@@ -9,15 +9,19 @@ export type User = {
 
   pseudo: string;
 
-  createdAt: Date;
+  createdAt?: Date;
 
-  lastConnectedAt: Date;
+  lastConnectedAt?: Date;
 
-  isAdmin: boolean;
+  isAdmin?: boolean;
 
   language: string;
 
-  bio: string;
+  bio?: string;
 
-  urlPicture: string;
+  password?: string;
+
+  urlPicture?: string;
+
+  avatarBlob?: Blob;
 };

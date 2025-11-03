@@ -7,7 +7,7 @@ import { LangList } from "../../../ui/LangList";
 import { useRef, useState } from "react";
 import { getSignedUrl } from "../../../../api/storage/signedUrl";
 import { uploadFile } from "../../../../api/storage/uploadFile";
-import { getPublicUrl } from "../../../../api/storage/getPublicUrl";
+import { getProfilUrl } from "../../../../api/user/getProfilUrl";
 import { updateUser } from "../../../../api/user/updateUser";
 export function Profil() {
   const user = useOutletContext() as User;
@@ -16,12 +16,14 @@ export function Profil() {
   const bioRef = useRef<HTMLTextAreaElement>(null);
   const langsRef = useRef<HTMLSelectElement>(null);
   const pictureRef = useRef<File>(null);
-  const srcRef = user.urlPicture;
+  const imgRef = useRef<HTMLImageElement>(null);
   const cancelUpdate = () => {
-    /* pseudoRef.current.value = user.pseudo;
+    pseudoRef.current.value = user.pseudo;
     bioRef.current.value = user.bio;
     langsRef.current.value = user.language;
-    user.urlPicture || "https://avatar.iran.liara.run/public/20"; */
+    imgRef.current.src =
+      user.urlPicture || "https://avatar.iran.liara.run/public/20";
+    setModif(false);
   };
   const handleModif = () => {
     console.log("j'affiche");
@@ -29,22 +31,23 @@ export function Profil() {
   };
   const onUpdateSubmit = async () => {
     if (pictureRef.current) {
-      const { signedUrl, path } = await getSignedUrl(
+      const { signedUrl } = await getSignedUrl(
         "profilPicture",
         "profilPicture",
       );
 
-      await uploadFile(pictureRef.current, signedUrl);
-      const { publicUrl } = await getPublicUrl(path, user);
-      const pseudo = pseudoRef.current?.value;
-      const bio = bioRef.current?.value;
-      const lang = langsRef.current?.value;
-      user.pseudo = pseudo || user.pseudo;
-      user.bio = bio || user.bio;
-      user.language = lang || user.language;
+      await uploadFile(pictureRef.current, signedUrl, false);
+      const { publicUrl } = await getProfilUrl();
       user.urlPicture = publicUrl || user.urlPicture;
-      await updateUser(user);
     }
+    const pseudo = pseudoRef.current?.value;
+    const bio = bioRef.current?.value;
+    const lang = langsRef.current?.value;
+    user.pseudo = pseudo || user.pseudo;
+    user.bio = bio || user.bio;
+    user.language = lang || user.language;
+    await updateUser(user);
+    setModif(false);
   };
 
   return (
@@ -55,7 +58,8 @@ export function Profil() {
         ref={pictureRef}
         overlayPicture={penSvg}
         handleModif={handleModif}
-        className="m-5 h-32 w-32"
+        className="h-32 flex justify-center "
+        imgRef={imgRef}
       />
       <UpdateInput
         value={user.pseudo}

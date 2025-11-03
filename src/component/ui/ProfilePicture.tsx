@@ -6,6 +6,7 @@ type ProfilePictureProps = {
   overlayPicture?: string;
   className?: string;
   handleModif?: () => void;
+  imgRef?: React.Ref<HTMLImageElement>;
 };
 
 export const ProfilePicture = forwardRef<File | null, ProfilePictureProps>(
@@ -16,6 +17,7 @@ export const ProfilePicture = forwardRef<File | null, ProfilePictureProps>(
       overlayPicture,
       className,
       handleModif,
+      imgRef,
     }: ProfilePictureProps,
     ref,
   ) => {
@@ -23,13 +25,12 @@ export const ProfilePicture = forwardRef<File | null, ProfilePictureProps>(
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       const file = event.target.files?.[0];
-      if(file?.size > 3000000){
+      if (file?.size > 3000000) {
         //changer pour une modale
-        window.alert("fichier trop volumineux")
-        return
+        window.alert("fichier trop volumineux");
+        return;
       }
-      
-      console.log(file)
+
       if (!file) return;
 
       if (ref) {
@@ -38,26 +39,27 @@ export const ProfilePicture = forwardRef<File | null, ProfilePictureProps>(
         } else {
           (ref as React.MutableRefObject<File | null>).current = file;
         }
-      } 
+      }
       const reader = new FileReader();
       reader.onload = () => {
         setSrcPicture(reader.result as string);
-        if(handleModif) handleModif();
+        if (handleModif) handleModif();
       };
       reader.readAsDataURL(file);
     };
 
     return (
       <div className={cn("relative group rounded-full", className)}>
-        <label className="cursor-pointer relative">
+        <label className="cursor-pointer relative flex w-full h-full">
           <img
             src={srcPicture}
+            ref={imgRef}
             className="object-contain w-full h-full rounded-full"
           />
           <input
             type="file"
             accept="*.png, *.jpg, *.jpeg"
-            className="absolute inset-0 opacity-0 z-50 cursor-pointer"
+            className="absolute inset-0 opacity-0 z-50 cursor-pointer w-full h-full"
             onChange={handleFileChange}
           />
         </label>

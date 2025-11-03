@@ -2,11 +2,79 @@
     "homePage": {
         "heroMessage": {
             "part1": "Talk with your friends ",
-            "part2": "Meet new people that share the same hobbies as you"
+            "part2": "Meet new people that share the same hobbies as you",
+            "learn": "Learn more"
         },
+        "signin": "Sign in",
+        "signup": "Sign up",
         "translate": "Don't be scared by the language barrier, our app takes it for you"
     },
     "profile": {
         "config": "settings"
+    },
+    "tchat": {
+        "profile": "Profile",
+        "logout": "Logout",
+        "send": "Send",
+        "pinMessage": "Pin message",
+        "loadingMessages": "Loading messages...",
+        "deleteMessage": "Delete message",
+        "messageDeleted": "Deleted message",
+        "tchatRoom": "Chat Room",
+        "navigationMenu": {
+            "title": "Servers",
+            "noServer": "Any server available. Please add one server to start chatting!"
+        },
+        "chatBot": {
+            "welcomeMessage": "Hi 👋, here are the commands you can use in this channel:\n\n• /question [your question]\n  → Ask a question about a discussion in this channel.\n    Example: /question Who approved the decision from the last meeting?\n\n• /summarize [date]\n  → Get a summary of the conversation from the specified date.\n    You can use an ISO date or natural language.\n    Example: /summarize 2025-11-01T15:30:00\n    Example in natural language: /summarize yesterday afternoon",
+            "input": {
+                "placeholder": "Write a message...",
+                "send": "Send"
+            },
+            "typing": "Bot is typing..."
+        },
+        "tchatRoom": "Chat Room",
+        "typing": {
+            "one": "{{name}} is typing…",
+            "two": "{{name1}} and {{name2}} are typing…",
+            "many": "{{name1}}, {{name2}} and {{count}} others are typing…"
+        }
+    },
+    "profil": {
+        "link": {
+            "home": "Home",
+            "profile": "Profile",
+            "account": "security",
+            "theme": "theme"
+        }
+    },
+    "room": {
+        "loadingMessages": "Loading messages...",
+        "updateClose": "Update / Close server",
+        "update": "Update server",
+        "open": "Open server",
+        "openPublic": "Open to public",
+        "openToPublic": "Open public",
+        "tags": "tags split by commas",
+        "tagsPlaceholder": "ex:play,chill,french",
+        "cancel": "cancel",
+        "close": "close",
+        "confirm": "confirm"
+    },
+    "server": {
+        "leave": "Leave server",
+        "loading": "Server loading...",
+        "list": "List of servers",
+        "create": "Create a server",
+        "join": "Join a server",
+        "nodescription": "Any description",
+        "noServer": "Any server available. Please add one server to start chatting!",
+        "member": "Members",
+        "link": "Server invite link",
+        "connection": "Connection...",
+        "joinForm": "Join",
+        "name": "Server name",
+        "description": "Server description (optional)",
+        "find": "Find a server"
     }
 }
